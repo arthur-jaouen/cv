@@ -1,0 +1,151 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    font-size: 80%;
+}
+
+h1 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 1rem 0 0.8rem 0;
+}
+
+h2 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 1rem 0 0.8rem 0;
+}
+
+h3 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 1rem 0 0.8rem 0;
+}
+
+h4 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0.4rem 0;
+}
+
+h5 {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin: 0.3rem 0 0.3rem 0;
+}
+
+h3 .fa {
+    margin: 0 0.2rem;
+}
+
+p {
+    margin: 0.4rem 0;
+    font-size: 0.8rem;
+}
+
+p .fa {
+    margin-right: 0.2rem;
+}
+
+hr {
+    border: 0;
+    border-bottom: 1px solid white;
+}
+
+.fa-chess-piece {
+    font-size: 1.1em;
+}
+
+.fa-windsurf {
+    vertical-align: middle;
+}
+
+.fa-windsurf img {
+    height: 10px;
+}
+
+#container, #sidebar, #main {
+    height: 100%;
+    margin: 0;
+    overflow: auto;
+}
+
+#sidebar {
+    background: #349A92;
+    color: white;
+}
+
+#picture {
+    max-width: 50%;
+    height: auto;
+    border: 3px solid white;
+}
+
+#main {
+    padding: 0 40px;
+    text-align: justify;
+}
+
+#main p {
+    font-size: 0.75rem;
+}
+
+#main .section {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+#main .section:first-child {
+    padding-top: 0;
+}
+
+#main .section:last-child {
+    padding-bottom: 0;
+}
+
+.main-section {
+    margin-left: 5px;
+}
+
+.main-section .fa-square {
+    width: 12px;
+    margin-right: 6px;
+    text-align: center;
+    color: #349A92;
+}
+
+#main .main-section > p {
+    font-size: 10px;
+}
+
+.main-subsection {
+    border-left: 2px solid #349A92;
+    margin-left: 5px;
+    padding-left: 11px;
+    padding-bottom: 0.2rem;
+}
+
+.main-subsection .row {
+    margin-bottom: 0;
+}
+
+.main-subsection .col {
+    padding: 0;
+    margin: 3px 0;
+    text-align: center;
+}
+
+.stars .fa {
+    margin: 0;
+    color: #349A92;
+}
+
+@media print {
+    @page {
+        margin: 0;
+    }
+
+    body {
+        padding: 1.6cm;
+    }
+}
