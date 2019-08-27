@@ -1,0 +1,6 @@
+@import 'src/scss/variables.scss';
+
+.skill-list .subsection-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+}

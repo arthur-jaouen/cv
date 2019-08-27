@@ -1,0 +1,12 @@
+@import 'src/scss/variables.scss';
+
+.section {
+    .section-title {
+        font-size: 1.3rem;
+    }
+
+    > p {
+        font-size: 0.8rem;
+        margin: 0.5rem 0;
+    }
+}

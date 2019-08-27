@@ -1,0 +1,49 @@
+@import 'src/scss/variables.scss';
+
+.profile-container {
+    color: $secondary-color;
+    background-color: $accent-color;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.jobs-container,
+.education-skills-container {
+    padding: 0 1rem;
+}
+
+@media screen and (min-width: 721px) {
+    .profile-container {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 30%;
+    }
+
+    .jobs-container,
+    .education-skills-container {
+        padding-left: calc(30% + 1rem);
+    }
+}
+
+@media screen and (min-width: 1369px) {
+    .profile-container {
+        width: 20%;
+    }
+
+    .jobs-container {
+        padding-left: calc(20% + 1rem);
+        padding-right: calc(30% + 1rem);
+    }
+
+    .education-skills-container {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 30%;
+        padding-left: 1rem;
+        box-sizing: border-box;
+    }
+}

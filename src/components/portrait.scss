@@ -1,0 +1,15 @@
+@import 'src/scss/variables.scss';
+
+.portrait {
+    text-align: center;
+    margin-bottom: 1rem;
+
+    .portrait-image img {
+        display: block;
+        width: 33%;
+        max-width: 10rem;
+        margin: auto;
+        border: 0.2rem solid $secondary-color;
+        border-radius: 50%;
+    }
+}
