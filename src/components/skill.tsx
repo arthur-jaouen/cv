@@ -1,6 +1,8 @@
-import _ from 'lodash';
+import range from 'lodash/range';
 import React from 'react';
+import { FaRegStar, FaStar } from 'react-icons/fa';
 
+import { Icon } from 'src/components/icons/icon';
 import { Message, MessageProps } from 'src/components/message';
 
 import './skill.scss';
@@ -20,11 +22,11 @@ export class Skill extends React.Component<SkillProps> {
                     <Message {...name} />
                 </p>
                 <p className="skill-rate">
-                    {_.range(0, rate).map(i => (
-                        <i key={i} className="fas fa-star" />
+                    {range(0, rate).map(i => (
+                        <Icon key={i} icon={FaStar} />
                     ))}
-                    {_.range(rate, 5).map(i => (
-                        <i key={i} className="far fa-star" />
+                    {range(rate, 5).map(i => (
+                        <Icon key={i} icon={FaRegStar} />
                     ))}
                 </p>
             </div>

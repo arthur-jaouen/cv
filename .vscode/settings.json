@@ -16,10 +16,6 @@
             "disableSort": true
         },
         {
-            "regex": "^@comerso/",
-            "orderLevel": 20
-        },
-        {
             "regex": "^src/",
             "orderLevel": 25
         },

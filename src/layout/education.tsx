@@ -1,5 +1,6 @@
 import moment from 'moment';
 import React from 'react';
+import { FaGraduationCap } from 'react-icons/fa';
 
 import { Degree } from 'src/components/degree';
 import { Section } from 'src/components/section';
@@ -7,7 +8,7 @@ import { Section } from 'src/components/section';
 export class Education extends React.Component<{}> {
     render() {
         return (
-            <Section icon={{ name: 'graduation-cap', type: 'solid' }} title={{ en: 'Education', fr: 'Formation' }}>
+            <Section icon={FaGraduationCap} title={{ en: 'Education', fr: 'Formation' }}>
                 <Degree
                     start={moment('2008', 'YYYY')}
                     end={moment('2011', 'YYYY')}

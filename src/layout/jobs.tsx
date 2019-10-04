@@ -1,5 +1,6 @@
 import moment from 'moment';
 import React from 'react';
+import { FaSuitcase } from 'react-icons/fa';
 
 import { Job } from 'src/components/job';
 import { Section } from 'src/components/section';
@@ -7,10 +8,7 @@ import { Section } from 'src/components/section';
 export class Jobs extends React.Component<{}> {
     render() {
         return (
-            <Section
-                icon={{ name: 'suitcase', type: 'solid' }}
-                title={{ en: 'Work experience', fr: 'Expériences professionnelles' }}
-            >
+            <Section icon={FaSuitcase} title={{ en: 'Work experience', fr: 'Expériences professionnelles' }}>
                 <Job
                     start={moment('2018-02', 'YYYY-MM')}
                     end={moment('2019-09', 'YYYY-MM')}

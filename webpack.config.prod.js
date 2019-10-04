@@ -41,7 +41,6 @@ module.exports = merge.smartStrategy({ 'module.rules.use': 'prepend' })(baseConf
         new CleanPlugin()
     ],
     optimization: {
-        runtimeChunk: 'single',
         splitChunks: {
             chunks: 'all'
         }

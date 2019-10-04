@@ -1,6 +1,9 @@
 import React from 'react';
+import { IconType } from 'react-icons';
 
-import { Icon } from 'src/components/icon';
+import { FlagFrance } from 'src/components/icons/flagFrance';
+import { FlagIreland } from 'src/components/icons/flagIreland';
+import { Icon } from 'src/components/icons/icon';
 import { LanguageConsumer } from 'src/components/language/languageContext';
 import { Languages } from 'src/components/language/languages';
 
@@ -9,7 +12,7 @@ import './languagePicker.scss';
 type LanguagePickerLinkProps = {
     language: Languages;
     name: string;
-    icon: string;
+    icon: IconType;
     selectedLanguage: Languages;
     onSelect: (language: Languages) => void;
 };
@@ -31,7 +34,7 @@ class LanguagePickerLink extends React.Component<LanguagePickerLinkProps> {
                 onClick={this.onClick}
                 href="#"
             >
-                <Icon name={icon} type="custom" />
+                <Icon icon={icon} />
                 <br />
                 {name}
             </a>
@@ -48,14 +51,14 @@ export class LanguagePicker extends React.Component {
                         <LanguagePickerLink
                             language="en"
                             name="En"
-                            icon={require('public/img/en.svg')}
+                            icon={FlagIreland}
                             onSelect={updateLanguage}
                             selectedLanguage={language}
                         />
                         <LanguagePickerLink
                             language="fr"
                             name="Fr"
-                            icon={require('public/img/fr.svg')}
+                            icon={FlagFrance}
                             onSelect={updateLanguage}
                             selectedLanguage={language}
                         />

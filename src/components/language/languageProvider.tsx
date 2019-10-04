@@ -1,3 +1,4 @@
+import moment from 'moment';
 import React from 'react';
 
 import { LanguageContext } from 'src/components/language/languageContext';
@@ -13,6 +14,7 @@ export class LanguageProvider extends React.Component<{}, LanguageProviderState>
     };
 
     updateLanguage = (language: Languages) => {
+        moment.locale(language);
         this.setState({ language });
     };
 

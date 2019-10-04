@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlPlugin = require('html-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const ForkTsCheckerPlugin = require('fork-ts-checker-webpack-plugin');
@@ -26,7 +27,8 @@ module.exports = {
                     {
                         loader: 'babel-loader',
                         options: {
-                            presets: ['@babel/preset-env', '@babel/preset-react']
+                            presets: [['@babel/preset-env', { targets: '> 0.25%, not dead' }], '@babel/preset-react'],
+                            plugins: ['@babel/transform-runtime']
                         }
                     },
                     {
@@ -69,6 +71,7 @@ module.exports = {
         }),
         new ForkTsCheckerPlugin({
             checkSyntacticErrors: true
-        })
+        }),
+        new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
     ]
 };

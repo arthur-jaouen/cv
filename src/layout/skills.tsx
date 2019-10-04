@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaStar } from 'react-icons/fa';
 
 import { Section } from 'src/components/section';
 import { Skill } from 'src/components/skill';
@@ -7,7 +8,7 @@ import { SkillList } from 'src/components/skillList';
 export class Skills extends React.Component<{}> {
     render() {
         return (
-            <Section icon={{ name: 'star', type: 'solid' }} title={{ en: 'Skills', fr: 'Compétences' }}>
+            <Section icon={FaStar} title={{ en: 'Skills', fr: 'Compétences' }}>
                 <SkillList title={{ en: 'Development', fr: 'Développement' }}>
                     <Skill name={{ en: 'Android', fr: 'Android' }} rate={5} />
                     <Skill name={{ en: 'Javascript/Typescript', fr: 'Javascript/Typescript' }} rate={5} />

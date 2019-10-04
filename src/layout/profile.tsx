@@ -1,11 +1,12 @@
 import React from 'react';
+import { FaRegUser } from 'react-icons/fa';
 
 import { Section } from 'src/components/section';
 
 export class Profile extends React.Component<{}> {
     render() {
         return (
-            <Section icon={{ name: 'user', type: 'regular' }} title={{ en: 'Profile', fr: 'Profil' }}>
+            <Section icon={FaRegUser} title={{ en: 'Profile', fr: 'Profil' }}>
                 <p>26 ans - Permis B</p>
                 <p>
                     Après des études en informatique à l'IUT de Lannion et 4 ans d'expérience dans le service aux

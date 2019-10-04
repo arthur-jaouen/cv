@@ -1,13 +1,14 @@
 import React from 'react';
+import { IconType } from 'react-icons';
 
-import { Icon, IconProps } from 'src/components/icon';
+import { Icon } from 'src/components/icons/icon';
 import { Message, MessageProps } from 'src/components/message';
 
 import './section.scss';
 
 export type SectionProps = {
     title: MessageProps;
-    icon: IconProps;
+    icon: IconType;
 };
 
 export class Section extends React.Component<SectionProps> {
@@ -17,7 +18,7 @@ export class Section extends React.Component<SectionProps> {
         return (
             <div className="section">
                 <h3 className="section-title">
-                    <Icon {...icon} /> <Message {...title} />
+                    <Icon icon={icon} /> <Message {...title} />
                 </h3>
                 {children}
             </div>

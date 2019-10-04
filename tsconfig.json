@@ -26,7 +26,7 @@
         "strictFunctionTypes": true,
         "strictNullChecks": true,
         "strictPropertyInitialization": true,
-        "target": "es2015"
+        "target": "esnext"
     },
     "include": ["src", "public"],
     "exclude": ["node_modules", "build", "storybook-static"]
