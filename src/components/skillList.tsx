@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { MessageProps } from 'src/components/message';
+import { MessageType } from 'src/components/i18n/message';
 import { Subsection } from 'src/components/subsection';
 
 import './skillList.scss';
 
 export type SkillListProps = {
-    title: MessageProps;
+    title: MessageType;
 };
 
 export class SkillList extends React.Component<SkillListProps> {

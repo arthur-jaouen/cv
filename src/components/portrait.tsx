@@ -1,28 +1,28 @@
 import React from 'react';
 
-import { Message, MessageProps } from 'src/components/message';
+import { Message, MessageType } from 'src/components/i18n/message';
 
 import './portrait.scss';
 
 export type PortraitProps = {
-    imageUrl: string;
+    image: string;
     name: string;
-    title: MessageProps;
+    title: MessageType;
 };
 
 export class Portrait extends React.Component<PortraitProps> {
     render() {
-        const { imageUrl: portraitUrl, name, title } = this.props;
+        const { image, name, title } = this.props;
 
         return (
             <div className="portrait">
                 <div className="portrait-image">
-                    <img src={portraitUrl} title={name} alt={name} />
+                    <img src={image} title={name} alt={name} />
                 </div>
                 <h1 className="portrait-name">{name}</h1>
                 <hr />
                 <h2 className="portrait-title">
-                    <Message {...title} />
+                    <Message msg={title} />
                 </h2>
             </div>
         );

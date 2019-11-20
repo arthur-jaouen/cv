@@ -1,7 +1,7 @@
 import { Moment } from 'moment';
 import React from 'react';
 
-import { Message, MessageProps } from 'src/components/message';
+import { Message, MessageType } from 'src/components/i18n/message';
 import { Subsection } from 'src/components/subsection';
 
 import './degree.scss';
@@ -9,8 +9,8 @@ import './degree.scss';
 export type DegreeProps = {
     start?: Moment;
     end: Moment;
-    title: MessageProps;
-    description: MessageProps;
+    title: MessageType;
+    description: MessageType;
 };
 
 export class Degree extends React.Component<DegreeProps> {
@@ -19,17 +19,12 @@ export class Degree extends React.Component<DegreeProps> {
 
         return (
             <div className="degree">
-                <Subsection
-                    title={{
-                        en: (start ? start.format('YYYY') + ' - ' : '') + end.format('YYYY'),
-                        fr: (start ? start.format('YYYY') + ' - ' : '') + end.format('YYYY')
-                    }}
-                >
+                <Subsection title={(start ? start.format('YYYY') + ' - ' : '') + end.format('YYYY')}>
                     <h4 className="degree-title">
-                        <Message {...title} />
+                        <Message msg={title} />
                     </h4>
                     <p className="degree-description">
-                        <Message {...description} />
+                        <Message msg={description} />
                     </p>
                 </Subsection>
             </div>

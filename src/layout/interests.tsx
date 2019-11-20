@@ -4,15 +4,26 @@ import { FaBook, FaChess, FaCogs, FaRegHeart } from 'react-icons/fa';
 import { Windsurf } from 'src/components/icons/windsurf';
 import { Item } from 'src/components/item';
 import { Section } from 'src/components/section';
+import { TwoPanesLayout } from 'src/components/twoPanesLayout';
 
 export class Interests extends React.Component<{}> {
     render() {
         return (
             <Section icon={FaRegHeart} title={{ en: 'Interests', fr: "Centres d'intérêt" }}>
-                <Item icon={FaCogs} text={{ en: 'Projets personnels', fr: 'Projets personnels' }} />
-                <Item icon={Windsurf} text={{ en: 'Planche à voile', fr: 'Planche à voile' }} />
-                <Item icon={FaChess} text={{ en: "Jeu d'échecs", fr: "Jeu d'échecs" }} />
-                <Item icon={FaBook} text={{ en: 'Lecture', fr: 'Lecture' }} />
+                <TwoPanesLayout
+                    left={
+                        <>
+                            <Item icon={FaCogs} text={{ en: 'Personal projects', fr: 'Projets personnels' }} />
+                            <Item icon={Windsurf} text={{ en: 'Windsurf', fr: 'Planche à voile' }} />
+                        </>
+                    }
+                    right={
+                        <>
+                            <Item icon={FaChess} text={{ en: 'Chess', fr: "Jeu d'échecs" }} />
+                            <Item icon={FaBook} text={{ en: 'Reading', fr: 'Lecture' }} />
+                        </>
+                    }
+                />
             </Section>
         );
     }

@@ -12,17 +12,31 @@ export class Education extends React.Component<{}> {
                 <Degree
                     start={moment('2008', 'YYYY')}
                     end={moment('2011', 'YYYY')}
-                    title={{ en: 'DUT Informatique', fr: 'DUT Informatique' }}
+                    title={{
+                        en: (
+                            <>
+                                Two-year degree in{' '}
+                                <a href="http://www.iut-lannion.fr/presentation/dut-informatique">Computer Science</a>
+                            </>
+                        ),
+                        fr: 'DUT Informatique'
+                    }}
                     description={{
-                        en: "Délivré par l'IUT de Lannion, option génie logiciel ",
+                        en: (
+                            <>
+                                At the{' '}
+                                <a href="http://www.iut-lannion.fr/english">Lannion Institue of Technology (France)</a>{' '}
+                                with an emphasis on software engineering
+                            </>
+                        ),
                         fr: "Délivré par l'IUT de Lannion, option génie logiciel"
                     }}
                 />
                 <Degree
                     end={moment('2008', 'YYYY')}
-                    title={{ en: 'Baccalauréat S', fr: 'Baccalauréat S' }}
+                    title={{ en: 'Science A-levels', fr: 'Baccalauréat S' }}
                     description={{
-                        en: "Mention assez bien, option sciences de l'ingénieur, spécialité mathématiques",
+                        en: 'With an emphasis on mathematics and engineering sciences',
                         fr: "Mention assez bien, option sciences de l'ingénieur, spécialité mathématiques"
                     }}
                 />

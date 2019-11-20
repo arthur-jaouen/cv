@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { LanguagePicker } from 'src/components/language/languagePicker';
+import { LanguagePicker } from 'src/components/i18n/languagePicker';
 import { Portrait } from 'src/components/portrait';
 
 export class Header extends React.Component<{}> {
@@ -9,9 +9,9 @@ export class Header extends React.Component<{}> {
             <div className="header">
                 <LanguagePicker />
                 <Portrait
-                    imageUrl={require('public/img/portrait.jpg')}
+                    image={require('public/img/portrait.jpg')}
                     name="Arthur JAOUEN"
-                    title={{ en: 'Web & apps developer', fr: 'Développeur web & applications' }}
+                    title={{ en: 'Full Stack Developer', fr: 'Développeur Fullstack' }}
                 />
             </div>
         );

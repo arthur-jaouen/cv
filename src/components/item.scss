@@ -1,0 +1,12 @@
+@import 'src/scss/variables.scss';
+
+.item {
+    display: flex;
+    flex-direction: row;
+
+    > .icon {
+        flex: 0 0;
+        justify-items: flex-start;
+        margin-right: 0.5rem;
+    }
+}

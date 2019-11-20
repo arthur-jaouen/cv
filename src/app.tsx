@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { LanguageProvider } from 'src/components/language/languageProvider';
+import { LanguageProvider } from 'src/components/i18n/languageProvider';
 import { Layout } from 'src/layout/layout';
 
 import './app.scss';

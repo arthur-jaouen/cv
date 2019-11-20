@@ -1,0 +1,17 @@
+@import 'src/scss/variables.scss';
+
+.company {
+    margin: 0;
+    text-align: center;
+}
+
+.company-name {
+    font-size: 1rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: $primary-color;
+}
+
+.company-logo {
+    width: 3rem;
+}

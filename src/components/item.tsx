@@ -1,12 +1,14 @@
 import React from 'react';
 import { IconType } from 'react-icons';
 
+import { Message, MessageType } from 'src/components/i18n/message';
 import { Icon } from 'src/components/icons/icon';
-import { Message, MessageProps } from 'src/components/message';
+
+import './item.scss';
 
 export type ItemProps = {
     icon: IconType;
-    text: MessageProps;
+    text: MessageType;
 };
 
 export class Item extends React.Component<ItemProps> {
@@ -15,7 +17,10 @@ export class Item extends React.Component<ItemProps> {
 
         return (
             <p className="item">
-                <Icon icon={icon} /> <Message {...text} />
+                <Icon icon={icon} />
+                <span className="item-content">
+                    <Message msg={text} />
+                </span>
             </p>
         );
     }

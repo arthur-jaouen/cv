@@ -1,4 +1,5 @@
 @import 'src/scss/fonts.scss';
+@import 'src/scss/variables.scss';
 
 html {
     font-size: 14px;
@@ -7,6 +8,10 @@ html {
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
+}
+
+a {
+    color: $primary-color;
 }
 
 @media screen and (min-width: 1369px) {

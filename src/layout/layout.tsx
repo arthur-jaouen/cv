@@ -15,17 +15,27 @@ export class Layout extends React.Component<{}> {
         return (
             <div className="layout-container">
                 <div className="profile-container">
-                    <Header />
-                    <Contact />
-                    <Profile />
-                    <Interests />
+                    <div className="sticky">
+                        <Header />
+                        <Contact />
+                        <Profile />
+                        <Interests />
+                    </div>
                 </div>
                 <div className="jobs-container">
-                    <Jobs />
+                    <div className="sticky">
+                        <Jobs />
+                    </div>
                 </div>
                 <div className="education-skills-container">
-                    <Education />
-                    <Skills />
+                    <div className="sticky">
+                        <div className="education-container">
+                            <Education />
+                        </div>
+                        <div className="skills-container">
+                            <Skills />
+                        </div>
+                    </div>
                 </div>
             </div>
         );
