@@ -7,7 +7,7 @@ import { Section } from 'src/components/section';
 export class Profile extends React.Component<{}> {
     render() {
         return (
-            <Section icon={FaRegUser} title={{ en: 'Profile', fr: 'Profil' }}>
+            <Section className="profile" icon={FaRegUser} title={{ en: 'Profile', fr: 'Profil' }}>
                 <Message
                     msg={{
                         en: (
@@ -30,7 +30,9 @@ export class Profile extends React.Component<{}> {
                                 </p>
                                 <p>This CV is powered by React, Typescript, SCSS and built by Webpack.</p>
                                 <p>
-                                    <a href="https://github.com/arthur-jaouen/cv">View source on Github</a>
+                                    <a href="https://github.com/arthur-jaouen/cv" target="_blank">
+                                        View source on Github
+                                    </a>
                                 </p>
                             </>
                         ),
@@ -54,7 +56,9 @@ export class Profile extends React.Component<{}> {
                                 </p>
                                 <p>This CV is powered by React, Typescript, SCSS and built by Webpack.</p>
                                 <p>
-                                    <a href="https://github.com/arthur-jaouen/cv">View source on Github</a>
+                                    <a href="https://github.com/arthur-jaouen/cv" target="_blank">
+                                        View source on Github
+                                    </a>
                                 </p>
                             </>
                         )

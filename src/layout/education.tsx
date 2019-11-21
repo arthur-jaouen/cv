@@ -16,7 +16,9 @@ export class Education extends React.Component<{}> {
                         en: (
                             <>
                                 Two-year degree in{' '}
-                                <a href="http://www.iut-lannion.fr/presentation/dut-informatique">Computer Science</a>
+                                <a href="http://www.iut-lannion.fr/presentation/dut-informatique" target="_blank">
+                                    Computer Science
+                                </a>
                             </>
                         ),
                         fr: 'DUT Informatique'
@@ -25,7 +27,9 @@ export class Education extends React.Component<{}> {
                         en: (
                             <>
                                 At the{' '}
-                                <a href="http://www.iut-lannion.fr/english">Lannion Institue of Technology (France)</a>{' '}
+                                <a href="http://www.iut-lannion.fr/english" target="_blank">
+                                    Lannion Institue of Technology (France)
+                                </a>{' '}
                                 with an emphasis on software engineering
                             </>
                         ),

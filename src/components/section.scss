@@ -1,12 +1,17 @@
 @import 'src/scss/variables.scss';
 
-.section {
+section {
+    display: flex;
+    flex-direction: column;
+
     .section-title {
         font-size: 1.3rem;
+        margin: 0;
+        margin-bottom: 1rem;
     }
 
     > p {
         font-size: 0.8rem;
-        margin: 0.5rem 0;
+        margin: 0.25rem 0;
     }
 }

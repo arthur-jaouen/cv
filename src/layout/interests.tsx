@@ -9,7 +9,7 @@ import { TwoPanesLayout } from 'src/components/twoPanesLayout';
 export class Interests extends React.Component<{}> {
     render() {
         return (
-            <Section icon={FaRegHeart} title={{ en: 'Interests', fr: "Centres d'intérêt" }}>
+            <Section className="interests" icon={FaRegHeart} title={{ en: 'Interests', fr: "Centres d'intérêt" }}>
                 <TwoPanesLayout
                     left={
                         <>

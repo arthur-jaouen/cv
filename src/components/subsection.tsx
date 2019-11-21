@@ -15,13 +15,13 @@ export class Subsection extends React.Component<SubsectionProps> {
         const { title, children } = this.props;
 
         return (
-            <div className="subsection">
+            <article>
                 <p className="subsection-title">
                     <Icon icon={FaSquare} color="#009a49" />
                     <Message msg={title} />
                 </p>
                 <div className="subsection-content">{children}</div>
-            </div>
+            </article>
         );
     }
 }

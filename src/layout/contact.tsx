@@ -10,7 +10,7 @@ import { TwoPanesLayout } from 'src/components/twoPanesLayout';
 export class Contact extends React.Component<{}> {
     render() {
         return (
-            <Section icon={FaRegEnvelope} title={{ en: 'Contact', fr: 'Contact' }}>
+            <Section className="contact" icon={FaRegEnvelope} title={{ en: 'Contact', fr: 'Contact' }}>
                 <TwoPanesLayout
                     left={
                         <>

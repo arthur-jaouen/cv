@@ -90,7 +90,7 @@ export class Jobs extends React.Component<{}> {
                     }}
                     languages={['PHP', 'JS', 'HTML/CSS']}
                     databases={['MySQL', 'Solr']}
-                    frameworks={['Bootstrap', 'jQuery', 'Angular', 'Cordova']}
+                    frameworks={['Bootstrap', 'Angular', 'Cordova']}
                 />
                 <Job
                     start={moment('2015-11', 'YYYY-MM')}
@@ -193,7 +193,7 @@ export class Jobs extends React.Component<{}> {
                         )
                     }}
                     languages={['PHP', 'Java', 'Ruby', 'Python', 'JS', 'HTML/CSS']}
-                    databases={['MySQL', 'PostgreSQL']}
+                    databases={['MySQL', 'PostgreSQL', 'SQLServer']}
                     frameworks={['Symfony', 'Rails', 'Android']}
                 />
             </Section>

@@ -1,8 +1,8 @@
 import React from 'react';
-
 import { Message, MessageType } from 'src/components/i18n/message';
-
 import './portrait.scss';
+
+
 
 export type PortraitProps = {
     image: string;
@@ -17,7 +17,7 @@ export class Portrait extends React.Component<PortraitProps> {
         return (
             <div className="portrait">
                 <div className="portrait-image">
-                    <img src={image} title={name} alt={name} />
+                    <img src={image} title={name} alt={name} width={386} height={407}/>
                 </div>
                 <h1 className="portrait-name">{name}</h1>
                 <hr />

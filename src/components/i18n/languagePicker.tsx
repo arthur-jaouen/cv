@@ -35,7 +35,6 @@ class LanguagePickerLink extends React.Component<LanguagePickerLinkProps> {
                 href="#"
             >
                 <Icon icon={icon} />
-                <br />
                 {name}
             </a>
         );

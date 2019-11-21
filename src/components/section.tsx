@@ -9,19 +9,20 @@ import './section.scss';
 export type SectionProps = {
     title: MessageType;
     icon: IconType;
+    className?: string;
 };
 
 export class Section extends React.Component<SectionProps> {
     render() {
-        const { title, icon, children } = this.props;
+        const { title, icon, className, children } = this.props;
 
         return (
-            <div className="section">
+            <section className={className}>
                 <h3 className="section-title">
                     <Icon icon={icon} /> <Message msg={title} />
                 </h3>
                 {children}
-            </div>
+            </section>
         );
     }
 }

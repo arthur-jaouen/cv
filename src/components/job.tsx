@@ -42,15 +42,21 @@ export class Job extends React.Component<JobProps> {
                     </h4>
                     <p className="job-tools">
                         {languages.map(l => (
-                            <span className="job-tool">{l}</span>
+                            <span key={l} className="job-tool">
+                                {l}
+                            </span>
                         ))}
-                        <Icon icon={FaCircle} color="#00e76d" />
+                        <Icon icon={FaCircle} color="#009a49" />
                         {frameworks.map(f => (
-                            <span className="job-tool">{f}</span>
+                            <span key={f} className="job-tool">
+                                {f}
+                            </span>
                         ))}
-                        <Icon icon={FaCircle} color="#00e76d" />
+                        <Icon icon={FaCircle} color="#009a49" />
                         {databases.map(d => (
-                            <span className="job-tool">{d}</span>
+                            <span key={d} className="job-tool">
+                                {d}
+                            </span>
                         ))}
                     </p>
                     <Message msg={description} />

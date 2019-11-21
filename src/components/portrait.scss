@@ -4,12 +4,19 @@
     text-align: center;
     margin-bottom: 1rem;
 
-    .portrait-image img {
-        display: block;
+    .portrait-image {
         width: 33%;
         max-width: 10rem;
         margin: auto;
         border: 0.2rem solid $secondary-color;
         border-radius: 50%;
+        background-color: $secondary-color;
+        overflow: hidden;
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
     }
 }
