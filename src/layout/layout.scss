@@ -75,7 +75,7 @@
     }
 }
 
-@media screen and (max-width: 721px) {
+@media screen and (max-width: 720px) {
     .layout-container {
         grid-template-areas:
             'header'
@@ -88,7 +88,7 @@
                 'portrait portrait portrait'
                 'contact none interests'
                 'profile profile profile';
-            grid-template-columns: 16rem auto 16rem;
+            grid-template-columns: 16rem auto 14rem;
         }
 
         aside .sticky {
@@ -97,6 +97,17 @@
             > :first-child {
                 margin-top: 0;
             }
+        }
+    }
+
+    @media (max-width: 480px) {
+        .layout-container header .sticky {
+            grid-template-areas:
+                'portrait'
+                'contact'
+                'profile'
+                'interests';
+            grid-template-columns: auto;
         }
     }
 }
