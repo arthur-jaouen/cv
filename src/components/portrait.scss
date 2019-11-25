@@ -5,18 +5,30 @@
     margin-bottom: 1rem;
 
     .portrait-image {
-        width: 33%;
-        max-width: 10rem;
-        margin: auto;
+        display: block;
+        margin: 1rem auto 0 auto;
         border: 0.2rem solid $secondary-color;
         border-radius: 50%;
         background-color: $secondary-color;
-        overflow: hidden;
 
-        img {
-            display: block;
-            width: 100%;
-            height: auto;
+        @media screen and (min-width: 1341px) {
+            width: 6rem;
+            height: 6rem;
+        }
+
+        @media screen and (max-width: 1340px) {
+            width: 5rem;
+            height: 5rem;
+        }
+
+        @media screen and (max-width: 720px) {
+            width: 10rem;
+            height: 10rem;
+        }
+
+        @media print {
+            width: 5rem;
+            height: 5rem;
         }
     }
 }

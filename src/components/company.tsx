@@ -1,8 +1,8 @@
 import React from 'react';
-
 import { MessageType } from 'src/components/i18n/message';
-
 import './company.scss';
+
+
 
 export type CompanyProps = {
     name: MessageType;

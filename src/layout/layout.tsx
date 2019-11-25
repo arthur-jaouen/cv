@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaDownload, FaFileDownload, FaFilePdf } from 'react-icons/fa';
+import { FaFileDownload } from 'react-icons/fa';
 
 import { LanguagePicker } from 'src/components/i18n/languagePicker';
 import { Message } from 'src/components/i18n/message';
@@ -31,8 +31,7 @@ export class Layout extends React.Component<{}> {
                                     ),
                                     fr: (
                                         <a href="CV Arthur JAOUEN.pdf" target="_blank">
-                                            <Icon icon={FaFilePdf} />
-                                            <Icon icon={FaDownload} />
+                                            <Icon icon={FaFileDownload} /> PDF
                                         </a>
                                     )
                                 }}
