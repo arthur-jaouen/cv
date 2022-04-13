@@ -1,13 +1,14 @@
-import React from 'react';
-import { FaSquare } from 'react-icons/fa';
+import './subsection.scss';
 
 import { Message, MessageType } from 'src/components/i18n/message';
-import { Icon } from 'src/components/icons/icon';
 
-import './subsection.scss';
+import { FaSquare } from 'react-icons/fa';
+import { Icon } from 'src/components/icons/icon';
+import React from 'react';
 
 export type SubsectionProps = {
     title: MessageType;
+    children?:React.ReactNode
 };
 
 export class Subsection extends React.Component<SubsectionProps> {

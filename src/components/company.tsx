@@ -1,8 +1,7 @@
-import React from 'react';
-import { MessageType } from 'src/components/i18n/message';
 import './company.scss';
 
-
+import { MessageType } from 'src/components/i18n/message';
+import React from 'react';
 
 export type CompanyProps = {
     name: MessageType;

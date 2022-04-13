@@ -3,21 +3,22 @@ const webpack = require('webpack');
 const HtmlPlugin = require('html-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const ForkTsCheckerPlugin = require('fork-ts-checker-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 module.exports = {
     entry: './src/index.tsx',
     output: {
         path: path.join(__dirname, 'build'),
         publicPath: '/',
-        filename: 'js/[name].[hash].js'
+        filename: 'js/[name].[hash].js',
     },
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
         plugins: [
             new TsconfigPathsPlugin({
-                configFile: './tsconfig.json'
-            })
-        ]
+                configFile: './tsconfig.json',
+            }),
+        ],
     },
     module: {
         rules: [
@@ -28,16 +29,16 @@ module.exports = {
                         loader: 'babel-loader',
                         options: {
                             presets: [['@babel/preset-env', { targets: '> 0.25%, not dead' }], '@babel/preset-react'],
-                            plugins: ['@babel/transform-runtime']
-                        }
+                            plugins: ['@babel/transform-runtime'],
+                        },
                     },
                     {
                         loader: 'ts-loader',
                         options: {
-                            happyPackMode: true
-                        }
-                    }
-                ]
+                            happyPackMode: true,
+                        },
+                    },
+                ],
             },
             {
                 test: /\.scss$/,
@@ -47,38 +48,38 @@ module.exports = {
                         loader: 'postcss-loader',
                         options: {
                             sourceMap: true,
-                            plugins: [require('autoprefixer')({ grid: true })]
-                        }
+                            postcssOptions: {
+                                plugins: [autoprefixer({ grid: 'autoplace' })],
+                            },
+                        },
                     },
-                    { loader: 'sass-loader', options: { sourceMap: true } }
-                ]
+                    { loader: 'sass-loader', options: { sourceMap: true } },
+                ],
             },
             {
                 test: /\.(png|jpe?g|gif|svg)$/,
                 loader: 'file-loader',
                 options: {
                     name: '[name].[contenthash].[ext]',
-                    outputPath: 'img'
-                }
+                    outputPath: 'img',
+                },
             },
             {
                 test: /\.(woff2?|ttf|eot)$/,
                 loader: 'file-loader',
                 options: {
                     name: '[name].[contenthash].[ext]',
-                    outputPath: 'fonts'
-                }
-            }
-        ]
+                    outputPath: 'fonts',
+                },
+            },
+        ],
     },
     plugins: [
         new HtmlPlugin({
             template: './public/index.html',
-            title: 'CV Arthur JAOUEN'
+            title: 'CV Arthur JAOUEN',
         }),
-        new ForkTsCheckerPlugin({
-            checkSyntacticErrors: true
-        }),
-        new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
-    ]
+        new ForkTsCheckerPlugin(),
+        new webpack.IgnorePlugin({ resourceRegExp: /^(\.\/locale)$/ }),
+    ],
 };

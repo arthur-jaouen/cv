@@ -1,6 +1,5 @@
-import React from 'react';
 import { FaStar } from 'react-icons/fa';
-
+import React from 'react';
 import { Section } from 'src/components/section';
 import { Skill } from 'src/components/skill';
 import { SkillList } from 'src/components/skillList';

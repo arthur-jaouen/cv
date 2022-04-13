@@ -1,7 +1,6 @@
-import React from 'react';
 import { FaRegUser } from 'react-icons/fa';
-
 import { Message } from 'src/components/i18n/message';
+import React from 'react';
 import { Section } from 'src/components/section';
 
 export class Profile extends React.Component<{}> {
@@ -61,7 +60,7 @@ export class Profile extends React.Component<{}> {
                                     </a>
                                 </p>
                             </>
-                        )
+                        ),
                     }}
                 />
             </Section>

@@ -1,16 +1,19 @@
-import moment from 'moment';
-import React from 'react';
-
 import { LanguageContext } from 'src/components/i18n/languageContext';
 import { Languages } from 'src/components/i18n/languages';
+import React from 'react';
+import moment from 'moment';
+
+type LanguageProviderProps = {
+    children?: React.ReactNode;
+};
 
 type LanguageProviderState = {
     language: Languages;
 };
 
-export class LanguageProvider extends React.Component<{}, LanguageProviderState> {
+export class LanguageProvider extends React.Component<LanguageProviderProps, LanguageProviderState> {
     state: LanguageProviderState = {
-        language: 'en'
+        language: 'en',
     };
 
     updateLanguage = (language: Languages) => {
@@ -26,7 +29,7 @@ export class LanguageProvider extends React.Component<{}, LanguageProviderState>
             <LanguageContext.Provider
                 value={{
                     language,
-                    updateLanguage: this.updateLanguage
+                    updateLanguage: this.updateLanguage,
                 }}
             >
                 {children}
