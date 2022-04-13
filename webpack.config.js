@@ -1,12 +1,17 @@
-const HtmlPlugin = require('html-webpack-plugin');
-const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
-const ForkTsCheckerPlugin = require('fork-ts-checker-webpack-plugin');
-const autoprefixer = require('autoprefixer');
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import ForkTsCheckerPlugin from 'fork-ts-checker-webpack-plugin';
+import HtmlPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
+import autoprefixer from 'autoprefixer';
 
-module.exports = {
+const config = (env) => ({
+    mode: env.dev ? 'development' : 'production',
+    target: env.dev ? 'web' : 'browserslist',
+    devtool: env.dev ? 'inline-source-map' : 'source-map',
     entry: './src/index.tsx',
     output: {
-        publicPath: './',
+        publicPath: env.dev ? '/' : './',
         filename: 'js/[name].[contenthash].js',
         chunkFilename: 'js/[name].[contenthash].js',
     },
@@ -41,6 +46,7 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: [
+                    { loader: env.dev ? 'style-loader' : MiniCssExtractPlugin.loader },
                     { loader: 'css-loader', options: { sourceMap: true } },
                     {
                         loader: 'postcss-loader',
@@ -69,7 +75,18 @@ module.exports = {
             title: 'CV Arthur JAOUEN',
         }),
         new ForkTsCheckerPlugin(),
+        ...(env.dev
+            ? []
+            : [
+                  new MiniCssExtractPlugin({
+                      filename: 'css/[name].[contenthash].css',
+                      chunkFilename: 'css/[name].[contenthash].css',
+                  }),
+              ]),
+        ...(env.analyze ? [new BundleAnalyzerPlugin()] : []),
     ],
     stats: 'minimal',
     ignoreWarnings: [/auto-fill/],
-};
+});
+
+export default config;
