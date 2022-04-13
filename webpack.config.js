@@ -1,5 +1,4 @@
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-import ForkTsCheckerPlugin from 'fork-ts-checker-webpack-plugin';
 import HtmlPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
@@ -74,7 +73,6 @@ const config = (env) => ({
             template: './assets/index.html',
             title: 'CV Arthur JAOUEN',
         }),
-        new ForkTsCheckerPlugin(),
         ...(env.dev
             ? []
             : [
