@@ -1,7 +1,7 @@
-import { LanguageContext } from 'src/components/i18n/languageContext';
-import { Languages } from 'src/components/i18n/languages';
+import { LanguageContext, Languages } from 'src/components/i18n/languageContext';
+
 import React from 'react';
-import moment from 'moment';
+import dayjs from 'dayjs';
 
 type LanguageProviderProps = {
     children?: React.ReactNode;
@@ -17,7 +17,7 @@ export class LanguageProvider extends React.Component<LanguageProviderProps, Lan
     };
 
     updateLanguage = (language: Languages) => {
-        moment.locale(language);
+        dayjs.locale(language);
         this.setState({ language });
     };
 

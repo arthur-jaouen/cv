@@ -1,13 +1,13 @@
-import moment from 'moment';
-import React from 'react';
-import ReactDOM from 'react-dom';
+import 'dayjs/locale/en';
+import 'dayjs/locale/fr';
 
 import { App } from 'src/app';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import dayjs from 'dayjs';
+import duration from 'dayjs/plugin/duration';
 
-import 'moment/locale/en-ie';
-import 'moment/locale/fr';
-
-moment.locale('en');
+dayjs.extend(duration);
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

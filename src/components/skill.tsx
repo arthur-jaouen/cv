@@ -1,11 +1,14 @@
-import range from 'lodash/range';
-import React from 'react';
-import { FaRegStar, FaStar } from 'react-icons/fa';
-
-import { Message, MessageType } from 'src/components/i18n/message';
-import { Icon } from 'src/components/icons/icon';
-
 import './skill.scss';
+
+import { FaRegStar, FaStar } from 'react-icons/fa';
+import { Message, MessageType } from 'src/components/i18n/message';
+
+import { Icon } from 'src/components/icons/icon';
+import React from 'react';
+
+function range(start: number, end: number): number[] {
+    return Array.from({ length: end - start }, (_, i) => i + start);
+}
 
 export type SkillProps = {
     name: MessageType;
@@ -23,10 +26,10 @@ export class Skill extends React.Component<SkillProps> {
                     <Message msg={name} />
                 </p>
                 <p className="skill-rate">
-                    {range(0, rate).map(i => (
+                    {range(0, rate).map((i) => (
                         <Icon key={i} icon={FaStar} />
                     ))}
-                    {range(rate, 5).map(i => (
+                    {range(rate, 5).map((i) => (
                         <Icon key={i} icon={FaRegStar} />
                     ))}
                 </p>

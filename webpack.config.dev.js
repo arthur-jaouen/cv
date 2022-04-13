@@ -5,9 +5,10 @@ const { HotModuleReplacementPlugin } = require('webpack');
 
 module.exports = mergeWithRules({ module: { rules: { test: 'match', use: 'prepend' } } })(baseConfig, {
     mode: 'development',
+    target: 'web',
     devtool: 'inline-source-map',
-    devServer: {
-        hot: true,
+    output: {
+        publicPath: '/',
     },
     module: {
         rules: [

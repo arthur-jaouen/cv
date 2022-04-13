@@ -12,7 +12,6 @@
 @supports (display: grid) {
     .skill-list .subsection-content {
         display: grid;
-        /* autoprefixer: ignore next */
         grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr));
     }
 }

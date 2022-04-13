@@ -1,8 +1,6 @@
+import { LanguageConsumer, Languages } from 'src/components/i18n/languageContext';
+
 import React from 'react';
-
-import { LanguageConsumer } from 'src/components/i18n/languageContext';
-
-import { Languages } from './languages';
 
 export type MessageType = React.ReactElement | string | { [key in Languages]: React.ReactElement | string };
 

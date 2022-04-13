@@ -1,18 +1,13 @@
 const { mergeWithRules } = require('webpack-merge');
 const baseConfig = require('./webpack.config.base.js');
-
-const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { CleanWebpackPlugin: CleanPlugin } = require('clean-webpack-plugin');
 
 module.exports = mergeWithRules({ module: { rules: { test: 'match', use: 'prepend' } } })(baseConfig, {
     mode: 'production',
+    target: 'browserslist',
     devtool: 'source-map',
     output: {
-        path: path.join(__dirname, 'build'),
-        publicPath: '/',
-        filename: 'js/[name].[contenthash].js',
-        chunkFilename: 'js/[name].[contenthash].js',
+        clean: true,
     },
     module: {
         rules: [
@@ -27,6 +22,5 @@ module.exports = mergeWithRules({ module: { rules: { test: 'match', use: 'prepen
             filename: 'css/[name].[contenthash].css',
             chunkFilename: 'css/[name].[contenthash].css',
         }),
-        new CleanPlugin(),
     ],
 });

@@ -1,5 +1,3 @@
-const path = require('path');
-const webpack = require('webpack');
 const HtmlPlugin = require('html-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const ForkTsCheckerPlugin = require('fork-ts-checker-webpack-plugin');
@@ -8,9 +6,9 @@ const autoprefixer = require('autoprefixer');
 module.exports = {
     entry: './src/index.tsx',
     output: {
-        path: path.join(__dirname, 'build'),
-        publicPath: '/',
-        filename: 'js/[name].[hash].js',
+        publicPath: './',
+        filename: 'js/[name].[contenthash].js',
+        chunkFilename: 'js/[name].[contenthash].js',
     },
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
@@ -28,7 +26,7 @@ module.exports = {
                     {
                         loader: 'babel-loader',
                         options: {
-                            presets: [['@babel/preset-env', { targets: '> 0.25%, not dead' }], '@babel/preset-react'],
+                            presets: ['@babel/preset-env', '@babel/preset-react'],
                             plugins: ['@babel/transform-runtime'],
                         },
                     },
@@ -58,28 +56,20 @@ module.exports = {
             },
             {
                 test: /\.(png|jpe?g|gif|svg)$/,
-                loader: 'file-loader',
-                options: {
-                    name: '[name].[contenthash].[ext]',
-                    outputPath: 'img',
-                },
-            },
-            {
-                test: /\.(woff2?|ttf|eot)$/,
-                loader: 'file-loader',
-                options: {
-                    name: '[name].[contenthash].[ext]',
-                    outputPath: 'fonts',
+                type: 'asset',
+                generator: {
+                    filename: 'img/[name].[contenthash][ext]',
                 },
             },
         ],
     },
     plugins: [
         new HtmlPlugin({
-            template: './public/index.html',
+            template: './assets/index.html',
             title: 'CV Arthur JAOUEN',
         }),
         new ForkTsCheckerPlugin(),
-        new webpack.IgnorePlugin({ resourceRegExp: /^(\.\/locale)$/ }),
     ],
+    stats: 'minimal',
+    ignoreWarnings: [/auto-fill/],
 };

@@ -1,25 +1,25 @@
-import moment from 'moment';
-import React from 'react';
 import { FaSuitcase } from 'react-icons/fa';
-
 import { Job } from 'src/components/job';
+import React from 'react';
 import { Section } from 'src/components/section';
+import comerso from 'assets/img/comerso.png';
+import dayjs from 'dayjs';
 
 export class Jobs extends React.Component<{}> {
     render() {
         return (
             <Section icon={FaSuitcase} title={{ en: 'Work experience', fr: 'Expériences professionnelles' }}>
                 <Job
-                    start={moment('2018-02', 'YYYY-MM')}
-                    end={moment('2019-09', 'YYYY-MM')}
+                    start={dayjs('2018-02')}
+                    end={dayjs('2019-09')}
                     company={{
                         name: 'Comerso',
                         url: 'https://comerso.fr/en/homepage/',
-                        logo: require('public/img/comerso.png')
+                        logo: comerso,
                     }}
                     title={{
                         en: 'Full Stack Developer (React, Android, .Net)',
-                        fr: 'Développeur fullstack (React, Android, .Net)'
+                        fr: 'Développeur fullstack (React, Android, .Net)',
                     }}
                     description={{
                         en: (
@@ -55,19 +55,19 @@ export class Jobs extends React.Component<{}> {
                             <>
                                 <p></p>
                             </>
-                        )
+                        ),
                     }}
                     languages={['Java', 'JS', 'C#', 'HTML/CSS']}
                     databases={['SQLServer', 'SQLite']}
                     frameworks={['Android', 'React', '.Net']}
                 />
                 <Job
-                    start={moment('2016-01', 'YYYY-MM')}
-                    end={moment('2016-03', 'YYYY-MM')}
-                    company={{ name: 'Silamir', url: 'http://silamir.com/en', logo: require('public/img/silamir.png') }}
+                    start={dayjs('2016-01')}
+                    end={dayjs('2016-03')}
+                    company={{ name: 'Silamir', url: 'http://silamir.com/en', logo: require('assets/img/silamir.png') }}
                     title={{
                         en: 'Full Stack Developer (PHP, Angular, Cordova)',
-                        fr: 'Développeur fullstack (PHP, Angular, Cordova)'
+                        fr: 'Développeur fullstack (PHP, Angular, Cordova)',
                     }}
                     description={{
                         en: (
@@ -86,19 +86,19 @@ export class Jobs extends React.Component<{}> {
                             <>
                                 <p>Développement d'applications web et mobile</p>
                             </>
-                        )
+                        ),
                     }}
                     languages={['PHP', 'JS', 'HTML/CSS']}
                     databases={['MySQL', 'Solr']}
                     frameworks={['Bootstrap', 'Angular', 'Cordova']}
                 />
                 <Job
-                    start={moment('2015-11', 'YYYY-MM')}
-                    end={moment('2015-12', 'YYYY-MM')}
+                    start={dayjs('2015-11')}
+                    end={dayjs('2015-12')}
                     company={{
                         name: 'Consept',
                         url: 'https://www.consept.fr/',
-                        logo: require('public/img/consept.jpg')
+                        logo: require('assets/img/consept.jpg'),
                     }}
                     title={{ en: 'Backend Developer (Ruby)', fr: 'Développeur backend (Ruby)' }}
                     description={{
@@ -119,18 +119,18 @@ export class Jobs extends React.Component<{}> {
                                     données existante
                                 </p>
                             </>
-                        )
+                        ),
                     }}
                     languages={['Ruby']}
                     databases={['SQLServer']}
                     frameworks={['Ruby on Rails']}
                 />
                 <Job
-                    start={moment('2015-09', 'YYYY-MM')}
-                    end={moment('2015-10', 'YYYY-MM')}
+                    start={dayjs('2015-09')}
+                    end={dayjs('2015-10')}
                     title={{
                         en: 'Full Stack Developer (PHP, Javascript)',
-                        fr: 'Développeur fullstack (PHP, Javascript)'
+                        fr: 'Développeur fullstack (PHP, Javascript)',
                     }}
                     description={{
                         en: (
@@ -151,19 +151,19 @@ export class Jobs extends React.Component<{}> {
                                     comptables
                                 </p>
                             </>
-                        )
+                        ),
                     }}
                     languages={['PHP', 'JS', 'HTML/CSS']}
                     databases={['MySQL', 'Solr']}
                     frameworks={['Bootstrap', 'jQuery']}
                 />
                 <Job
-                    start={moment('2011-04', 'YYYY-MM')}
-                    end={moment('2015-05', 'YYYY-MM')}
+                    start={dayjs('2011-04')}
+                    end={dayjs('2015-05')}
                     company={{
                         name: 'FactorFX',
                         url: 'https://www.factorfx.com/',
-                        logo: require('public/img/factorfx.jpg')
+                        logo: require('assets/img/factorfx.jpg'),
                     }}
                     title={{ en: 'Full Stack Developer', fr: 'Développeur fullstack' }}
                     description={{
@@ -190,7 +190,7 @@ export class Jobs extends React.Component<{}> {
                                     Pentaho), formations
                                 </p>
                             </>
-                        )
+                        ),
                     }}
                     languages={['PHP', 'Java', 'Ruby', 'Python', 'JS', 'HTML/CSS']}
                     databases={['MySQL', 'PostgreSQL', 'SQLServer']}

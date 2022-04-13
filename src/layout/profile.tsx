@@ -29,7 +29,7 @@ export class Profile extends React.Component<{}> {
                                 </p>
                                 <p>This CV is powered by React, Typescript, SCSS and built by Webpack.</p>
                                 <p>
-                                    <a href="https://github.com/arthur-jaouen/cv" target="_blank">
+                                    <a href="https://github.com/arthur-jaouen/cv" target="_blank" rel="noreferrer">
                                         View source on Github
                                     </a>
                                 </p>
@@ -55,7 +55,7 @@ export class Profile extends React.Component<{}> {
                                 </p>
                                 <p>This CV is powered by React, Typescript, SCSS and built by Webpack.</p>
                                 <p>
-                                    <a href="https://github.com/arthur-jaouen/cv" target="_blank">
+                                    <a href="https://github.com/arthur-jaouen/cv" target="_blank" rel="noreferrer">
                                         View source on Github
                                     </a>
                                 </p>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Languages } from 'src/components/i18n/languages';
+export type Languages = 'fr' | 'en';
 
 export type LanguageContextProps = {
     language: Languages;
@@ -9,7 +9,7 @@ export type LanguageContextProps = {
 
 export const LanguageContext = React.createContext<LanguageContextProps>({
     language: 'en',
-    updateLanguage: language => {}
+    updateLanguage: (language) => {},
 });
 
 export const LanguageConsumer = LanguageContext.Consumer;

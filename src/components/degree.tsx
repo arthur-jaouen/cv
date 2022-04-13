@@ -1,14 +1,14 @@
-import { Moment } from 'moment';
-import React from 'react';
-
-import { Message, MessageType } from 'src/components/i18n/message';
-import { Subsection } from 'src/components/subsection';
-
 import './degree.scss';
 
+import { Message, MessageType } from 'src/components/i18n/message';
+
+import { Dayjs } from 'dayjs';
+import React from 'react';
+import { Subsection } from 'src/components/subsection';
+
 export type DegreeProps = {
-    start?: Moment;
-    end: Moment;
+    start?: Dayjs;
+    end: Dayjs;
     title: MessageType;
     description: MessageType;
 };

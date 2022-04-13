@@ -1,13 +1,12 @@
-import React from 'react';
-import { IconType } from 'react-icons';
+import './languagePicker.scss';
 
-import { LanguageConsumer } from 'src/components/i18n/languageContext';
-import { Languages } from 'src/components/i18n/languages';
+import { LanguageConsumer, Languages } from 'src/components/i18n/languageContext';
+
 import { FlagFrance } from 'src/components/icons/flagFrance';
 import { FlagIreland } from 'src/components/icons/flagIreland';
 import { Icon } from 'src/components/icons/icon';
-
-import './languagePicker.scss';
+import { IconType } from 'react-icons';
+import React from 'react';
 
 type LanguagePickerLinkProps = {
     language: Languages;
@@ -28,11 +27,11 @@ class LanguagePickerLink extends React.Component<LanguagePickerLinkProps> {
 
         return (
             <a
-                className={
-                    'language-picker-link' + (selectedLanguage === language ? ' language-picker-link-selected' : '')
-                }
+                className={`language-picker-link${
+                    selectedLanguage === language ? ' language-picker-link-selected' : ''
+                }`}
                 onClick={this.onClick}
-                href="#"
+                href={`#${language}`}
             >
                 <Icon icon={icon} />
                 {name}

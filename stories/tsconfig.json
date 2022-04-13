@@ -4,5 +4,5 @@
         "baseUrl": "../src"
     },
     "include": ["."],
-    "exclude": ["node_modules", "build", "storybook-static"]
+    "exclude": ["node_modules", "dist", "storybook-static"]
 }

@@ -16,7 +16,7 @@
         "noImplicitThis": true,
         "paths": {
             "src/*": ["*"],
-            "public/*": ["../public/*"]
+            "assets/*": ["../assets/*"]
         },
         "resolveJsonModule": true,
         "skipLibCheck": true,
@@ -28,6 +28,6 @@
         "strictPropertyInitialization": true,
         "target": "esnext"
     },
-    "include": ["src", "public"],
-    "exclude": ["node_modules", "build", "storybook-static"]
+    "include": ["src", "assets", "assets.d.ts"],
+    "exclude": ["node_modules", "dist", "storybook-static"]
 }

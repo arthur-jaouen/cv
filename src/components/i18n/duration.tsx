@@ -1,17 +1,17 @@
-import { duration as momentDuration, Moment } from 'moment';
-import React from 'react';
+import dayjs, { Dayjs } from 'dayjs';
 
 import { Message } from 'src/components/i18n/message';
+import React from 'react';
 
 export type DurationProps = {
-    start: Moment;
-    end: Moment;
+    start: Dayjs;
+    end: Dayjs;
 };
 
 export class Duration extends React.Component<DurationProps> {
     render() {
         const { start, end } = this.props;
-        const diff = momentDuration(end.diff(start)).add(2, 'months');
+        const diff = dayjs.duration(end.diff(start)).add(2, 'months');
         const years = diff.years();
         const months = diff.months() % 12;
 
@@ -20,14 +20,14 @@ export class Duration extends React.Component<DurationProps> {
                 <Message
                     msg={{
                         en: `${years} years`,
-                        fr: `${years} ans`
+                        fr: `${years} ans`,
                     }}
                 />
             ) : (
                 <Message
                     msg={{
                         en: `${years} year`,
-                        fr: `${years} an`
+                        fr: `${years} an`,
                     }}
                 />
             )
@@ -38,14 +38,14 @@ export class Duration extends React.Component<DurationProps> {
                 <Message
                     msg={{
                         en: `${months} months`,
-                        fr: `${months} mois`
+                        fr: `${months} mois`,
                     }}
                 />
             ) : (
                 <Message
                     msg={{
                         en: `${months} month`,
-                        fr: `${months} mois`
+                        fr: `${months} mois`,
                     }}
                 />
             )

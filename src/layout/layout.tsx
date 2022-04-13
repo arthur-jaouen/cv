@@ -1,18 +1,16 @@
-import React from 'react';
-import { FaFileDownload } from 'react-icons/fa';
-
-import { LanguagePicker } from 'src/components/i18n/languagePicker';
-import { Message } from 'src/components/i18n/message';
-import { Icon } from 'src/components/icons/icon';
-import { Portrait } from 'src/components/portrait';
-
 import './layout.scss';
 
 import { Contact } from './contact';
 import { Education } from './education';
+import { FaFileDownload } from 'react-icons/fa';
+import { Icon } from 'src/components/icons/icon';
 import { Interests } from './interests';
 import { Jobs } from './jobs';
+import { LanguagePicker } from 'src/components/i18n/languagePicker';
+import { Message } from 'src/components/i18n/message';
+import { Portrait } from 'src/components/portrait';
 import { Profile } from './profile';
+import React from 'react';
 import { Skills } from './skills';
 
 export class Layout extends React.Component<{}> {
@@ -33,13 +31,13 @@ export class Layout extends React.Component<{}> {
                                         <a href="CV Arthur JAOUEN.pdf" target="_blank">
                                             <Icon icon={FaFileDownload} /> PDF
                                         </a>
-                                    )
+                                    ),
                                 }}
                             />
                         </div>
                         <LanguagePicker />
                         <Portrait
-                            image={require('public/img/portrait.jpg')}
+                            image={require('assets/img/portrait.jpg')}
                             name="Arthur JAOUEN"
                             title={{ en: 'Full Stack Developer', fr: 'Développeur Fullstack' }}
                         />
