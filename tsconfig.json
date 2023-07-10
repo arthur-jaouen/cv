@@ -29,5 +29,5 @@
         "target": "esnext"
     },
     "include": ["src", "assets", "assets.d.ts"],
-    "exclude": ["node_modules", "dist", "storybook-static"]
+    "exclude": ["node_modules", "dist"]
 }

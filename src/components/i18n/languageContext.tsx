@@ -1,15 +1,36 @@
-import React from 'react';
+import dayjs from 'dayjs';
+import { createContext, FunctionComponent, useCallback, useContext, useMemo, useState } from 'react';
 
-export type Languages = 'fr' | 'en';
+export type Language = 'fr' | 'en';
 
-export type LanguageContextProps = {
-    language: Languages;
-    updateLanguage: (language: Languages) => void;
+export type LanguageState = [language: Language, updateLanguage: (language: Language) => void];
+
+export const LanguageContext = createContext<LanguageState>([
+    'en',
+    () => {
+        /* Nothing */
+    },
+]);
+
+export function useLanguage(): Language {
+    const [language] = useContext(LanguageContext);
+
+    return language;
+}
+
+export type LanguageProviderProps = {
+    children?: React.ReactNode;
 };
 
-export const LanguageContext = React.createContext<LanguageContextProps>({
-    language: 'en',
-    updateLanguage: (language) => {},
-});
+export const LanguageProvider: FunctionComponent<LanguageProviderProps> = ({ children }) => {
+    const [language, setLanguage] = useState<Language>('en');
 
-export const LanguageConsumer = LanguageContext.Consumer;
+    const updateLanguage = useCallback((language: Language) => {
+        dayjs.locale(language);
+        setLanguage(language);
+    }, []);
+
+    const value = useMemo<LanguageState>(() => [language, updateLanguage], [language, updateLanguage]);
+
+    return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
+};

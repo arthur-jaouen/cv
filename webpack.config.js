@@ -1,8 +1,12 @@
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+import autoprefixer from 'autoprefixer';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import HtmlPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import path from 'path';
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
-import autoprefixer from 'autoprefixer';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 const config = (env) => ({
     mode: env.dev ? 'development' : 'production',
@@ -10,6 +14,7 @@ const config = (env) => ({
     devtool: env.dev ? 'inline-source-map' : 'source-map',
     entry: './src/index.tsx',
     output: {
+        path: path.resolve('./dist'),
         publicPath: env.dev ? '/' : './',
         filename: 'js/[name].[contenthash].js',
         chunkFilename: 'js/[name].[contenthash].js',
@@ -26,24 +31,16 @@ const config = (env) => ({
         rules: [
             {
                 test: /\.tsx?$/,
-                use: [
-                    {
-                        loader: 'babel-loader',
-                        options: {
-                            presets: ['@babel/preset-env', '@babel/preset-react'],
-                            plugins: ['@babel/transform-runtime'],
-                        },
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        plugins: env.dev ? ['react-refresh/babel'] : [],
                     },
-                    {
-                        loader: 'ts-loader',
-                        options: {
-                            happyPackMode: true,
-                        },
-                    },
-                ],
+                },
             },
             {
                 test: /\.scss$/,
+                sideEffects: true,
                 use: [
                     { loader: env.dev ? 'style-loader' : MiniCssExtractPlugin.loader },
                     { loader: 'css-loader', options: { sourceMap: true } },
@@ -73,9 +70,11 @@ const config = (env) => ({
             template: './assets/index.html',
             title: 'CV Arthur JAOUEN',
         }),
+        new ForkTsCheckerWebpackPlugin(),
         ...(env.dev
-            ? []
+            ? [new ReactRefreshWebpackPlugin()]
             : [
+                  new CleanWebpackPlugin(),
                   new MiniCssExtractPlugin({
                       filename: 'css/[name].[contenthash].css',
                       chunkFilename: 'css/[name].[contenthash].css',
@@ -85,6 +84,10 @@ const config = (env) => ({
     ],
     stats: 'minimal',
     ignoreWarnings: [/auto-fill/],
+    devServer: {
+        open: true,
+        allowedHosts: 'localhost',
+    },
 });
 
 export default config;

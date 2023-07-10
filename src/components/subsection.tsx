@@ -1,28 +1,21 @@
-import './subsection.scss';
-
-import { Message, MessageType } from 'src/components/i18n/message';
-
+import { FunctionComponent } from 'react';
 import { FaSquare } from 'react-icons/fa';
+import { Message, MessageType } from 'src/components/i18n/message';
 import { Icon } from 'src/components/icons/icon';
-import React from 'react';
+
+import './subsection.scss';
 
 export type SubsectionProps = {
     title: MessageType;
-    children?:React.ReactNode
+    children?: React.ReactNode;
 };
 
-export class Subsection extends React.Component<SubsectionProps> {
-    render() {
-        const { title, children } = this.props;
-
-        return (
-            <article>
-                <p className="subsection-title">
-                    <Icon icon={FaSquare} color="#009a49" />
-                    <Message msg={title} />
-                </p>
-                <div className="subsection-content">{children}</div>
-            </article>
-        );
-    }
-}
+export const Subsection: FunctionComponent<SubsectionProps> = ({ title, children }) => (
+    <article>
+        <p className="subsection-title">
+            <Icon icon={FaSquare} color="#009a49" />
+            <Message msg={title} />
+        </p>
+        <div className="subsection-content">{children}</div>
+    </article>
+);

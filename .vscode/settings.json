@@ -4,7 +4,4 @@
     "editor.codeActionsOnSave": {
         "source.organizeImports": true
     },
-    "prettier.printWidth": 120,
-    "prettier.tabWidth": 4,
-    "prettier.singleQuote": true,
 }
