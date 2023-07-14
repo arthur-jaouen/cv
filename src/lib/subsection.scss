@@ -1,0 +1,29 @@
+@import '../variables.scss';
+
+.subsection {
+  margin: 0;
+  margin-bottom: 0.2rem;
+
+  .subsection-title {
+    margin: 0.25rem 0;
+    font-size: 0.8rem;
+
+    .icon {
+      margin-left: 0.2rem;
+      margin-right: 0.8rem;
+    }
+  }
+
+  .subsection-content {
+    margin-left: 0.5rem;
+    border-left: 0.2rem solid $accent-color;
+    padding-left: 1.1rem;
+    padding-bottom: 0.5rem;
+
+    > p,
+    > ul {
+      font-size: 0.8rem;
+      margin: 0.2rem 0;
+    }
+  }
+}

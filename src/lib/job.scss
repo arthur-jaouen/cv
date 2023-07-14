@@ -1,0 +1,38 @@
+@import '../variables.scss';
+
+.job {
+  display: flex;
+  flex-direction: row;
+}
+
+.job-title {
+  font-size: 1.2rem;
+  margin: 0.4rem 0 0.2rem 0;
+}
+
+.job-tools {
+  padding-bottom: 0.2rem;
+
+  .job-tool {
+    display: inline-block;
+    padding: 0.1rem 0.3rem;
+    margin: 0.1rem 0.1rem;
+    border-radius: 0.15rem;
+    background-color: $accent-color;
+    color: $secondary-color;
+    font-size: 0.7rem;
+  }
+
+  .icon {
+    font-size: 0.4rem;
+    margin: 0.4rem 0.3rem;
+    vertical-align: top;
+  }
+}
+
+.job-company {
+  flex-shrink: 0;
+  width: 5rem;
+  padding-top: 1rem;
+  text-align: center;
+}

@@ -1,0 +1,19 @@
+@import '../../variables.scss';
+
+.language-picker {
+  position: absolute;
+  right: 1rem;
+
+  .language-picker-link {
+    display: inline-block;
+    text-decoration: none;
+    color: $secondary-color;
+    padding: 0.2rem 0.4rem;
+    font-size: 0.8rem;
+
+    &.language-picker-link-selected,
+    &:hover {
+      background-color: darken($accent-color, 10%);
+    }
+  }
+}
