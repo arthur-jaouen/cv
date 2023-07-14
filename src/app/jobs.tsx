@@ -7,6 +7,21 @@ import { Section } from '../lib/section';
 export const Jobs: FunctionComponent = () => (
   <Section icon={FaSuitcase} title={<T en="Work experience" fr="Expériences professionnelles" />}>
     <Job
+      start="2019-12"
+      end="2023-03"
+      company={{
+        name: 'IES Ltd.',
+        url: 'https://iesve.com/',
+        logo: require('../img/ies.jpg'),
+      }}
+      title={
+        <T en="Software engineer (React, Ruby, C++)" fr="Ingénieur logiciel (React, Ruby, C++)" />
+      }
+      languages={['JS', 'Ruby', 'C++', 'C#', 'HTML/CSS']}
+      databases={['SQLServer']}
+      frameworks={['React', '.Net']}
+    ></Job>
+    <Job
       start="2018-02"
       end="2019-09"
       company={{

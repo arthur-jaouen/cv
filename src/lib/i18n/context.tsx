@@ -4,39 +4,35 @@ import {
   FunctionComponent,
   PropsWithChildren,
   useContext,
-  useMemo,
+  useEffect,
   useState,
 } from 'react';
-import { Language } from './language';
+import { Language, languageFromString } from './language';
 
-export type LanguageState = [language: Language, setLanguage: (language: Language) => void];
-
-export const LanguageContext = createContext<LanguageState>([
-  'en',
-  () => {
-    /* Nothing */
-  },
-]);
+export const LanguageContext = createContext<Language>(
+  languageFromString(window.navigator.language),
+);
 
 export function useLanguage(): Language {
-  const [language] = useContext(LanguageContext);
-
-  return language;
+  return useContext(LanguageContext);
 }
 
 export const LanguageProvider: FunctionComponent<PropsWithChildren> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('en');
+  const [language, setLanguage] = useState(languageFromString(window.navigator.language));
 
-  const value = useMemo<LanguageState>(
-    () => [
-      language,
-      (language: Language) => {
-        dayjs.locale(language);
-        setLanguage(language);
-      },
-    ],
-    [language, setLanguage],
-  );
+  useEffect(() => {
+    function hashChanged() {
+      const language = languageFromString(window.location.hash.substring(1));
+      dayjs.locale(language);
+      setLanguage(language);
+    }
 
-  return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
+    window.addEventListener('hashchange', hashChanged);
+
+    return () => {
+      window.removeEventListener('hashchange', hashChanged);
+    };
+  }, []);
+
+  return <LanguageContext.Provider value={language}>{children}</LanguageContext.Provider>;
 };

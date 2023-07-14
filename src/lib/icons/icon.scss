@@ -1,7 +1,7 @@
 @import '../../variables.scss';
 
 .icon {
-  display: inline-flex;
-  align-self: center;
   margin-right: 0.2rem;
+  display: inline-block;
+  vertical-align: middle;
 }

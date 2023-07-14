@@ -7,7 +7,7 @@ import {
   FaPhone,
   FaRegEnvelope,
 } from 'react-icons/fa';
-import { Fr, T } from '../lib/i18n/translate';
+import { En, T } from '../lib/i18n/translate';
 import { Item } from '../lib/item';
 import { LeftPanel, Panels, RightPanel } from '../lib/panels';
 import { Section } from '../lib/section';
@@ -27,10 +27,10 @@ export const Contact: FunctionComponent = () => (
           </a>
         </Item>
         <Item key="address" icon={FaMapMarker}>
-          112 Richmond Road <br /> Dublin 3 <br /> D03 XC85
-          <Fr>
-            <br /> IRELAND
-          </Fr>
+          12 rue Saint Jean <br /> 50400 Granville
+          <En>
+            <br /> FRANCE
+          </En>
         </Item>
       </LeftPanel>
       <RightPanel>
