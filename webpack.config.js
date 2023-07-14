@@ -37,17 +37,16 @@ const config = (env) => ({
         sideEffects: true,
         use: [
           { loader: env.dev ? 'style-loader' : MiniCssExtractPlugin.loader },
-          { loader: 'css-loader', options: { sourceMap: true } },
+          { loader: 'css-loader' },
           {
             loader: 'postcss-loader',
             options: {
-              sourceMap: true,
               postcssOptions: {
                 plugins: [autoprefixer({ grid: 'autoplace' })],
               },
             },
           },
-          { loader: 'sass-loader', options: { sourceMap: true } },
+          { loader: 'sass-loader' },
         ],
       },
       {
@@ -80,7 +79,6 @@ const config = (env) => ({
   ignoreWarnings: [/auto-fill/],
   devServer: {
     open: true,
-    allowedHosts: 'localhost',
   },
 });
 
