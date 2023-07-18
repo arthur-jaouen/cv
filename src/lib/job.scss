@@ -1,38 +1,32 @@
 @import '../variables.scss';
 
-.job {
-  display: flex;
-  flex-direction: row;
-}
+.job-logo {
+  float: left;
+  margin-right: 0.8rem;
 
-.job-title {
-  font-size: 1.2rem;
-  margin: 0.4rem 0 0.2rem 0;
-}
-
-.job-tools {
-  padding-bottom: 0.2rem;
-
-  .job-tool {
-    display: inline-block;
-    padding: 0.1rem 0.3rem;
-    margin: 0.1rem 0.1rem;
-    border-radius: 0.15rem;
-    background-color: $accent-color;
-    color: $secondary-color;
-    font-size: 0.7rem;
-  }
-
-  .icon {
-    font-size: 0.4rem;
-    margin: 0.4rem 0.3rem;
-    vertical-align: top;
+  img {
+    width: 3rem;
+    height: 3rem;
+    padding: 0.4rem 0;
   }
 }
 
 .job-company {
-  flex-shrink: 0;
-  width: 5rem;
-  padding-top: 1rem;
-  text-align: center;
+  font-size: 0.9rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: $primary-color;
+  margin: 0.4rem 0 0.2rem 0;
+}
+
+.job-title {
+  font-size: 1.2rem;
+  margin: 0.2rem 0;
+}
+
+.job-tools {
+  color: $accent-color;
+  font-size: 0.6rem;
+  font-weight: bold;
+  margin: 0.2rem 0;
 }

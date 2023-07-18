@@ -17,9 +17,9 @@ export const Layout: FunctionComponent = () => (
   <div className="layout-container">
     <header>
       <div className="sticky">
-        <div className="pdf-download">
+        <div className="pdf-download noprint">
           <En>
-            <a href="CV Arthur JAOUEN.pdf" target="_blank">
+            <a href="CV Arthur JAOUEN en.pdf" target="_blank">
               <Icon icon={FaFileDownload} /> PDF
             </a>
           </En>
@@ -31,8 +31,8 @@ export const Layout: FunctionComponent = () => (
         </div>
         <LanguagePicker />
         <Portrait image={require('../img/portrait.jpg')} name="Arthur JAOUEN">
-          <En>Full Stack Developer</En>
-          <Fr>Développeur Fullstack</Fr>
+          <En>Software Engineer</En>
+          <Fr>Ingénieur Logiciel</Fr>
         </Portrait>
         <Contact />
         <Profile />

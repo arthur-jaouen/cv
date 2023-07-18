@@ -31,7 +31,7 @@ const PickerLink: FunctionComponent<PickerLinkProps> = ({ language, name, icon }
 };
 
 export const LanguagePicker: FunctionComponent = () => (
-  <div className="language-picker">
+  <div className="language-picker noprint">
     <PickerLink language="en" name="En" icon={FlagIreland} />
     <PickerLink language="fr" name="Fr" icon={FlagFrance} />
     {/* TODO <PickerLink language="es" name="Es" icon={FlagSpain} /> */}

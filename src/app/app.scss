@@ -1,7 +1,7 @@
 @import '../variables.scss';
 
 html {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 body {
@@ -17,8 +17,27 @@ ul {
   padding-left: 2rem;
 }
 
-@media screen and (min-width: 1340px) {
-  html {
-    font-size: 16px;
+@media screen {
+  .noscreen {
+    display: none;
   }
+}
+
+@media print {
+  html {
+    font-size: 14px;
+  }
+
+  a {
+    text-decoration: none !important;
+  }
+
+  .noprint {
+    display: none;
+  }
+}
+
+@page {
+  size: A4;
+  margin: 3rem 2.5rem;
 }

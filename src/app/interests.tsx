@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 import { FaBook, FaChess, FaCogs, FaRegHeart } from 'react-icons/fa';
-import { En, Fr, T } from '../lib/i18n/translate';
+import { T } from '../lib/i18n/translate';
 import { Windsurf } from '../lib/icons/windsurf';
 import { Item } from '../lib/item';
 import { LeftPanel, Panels, RightPanel } from '../lib/panels';
@@ -15,22 +15,18 @@ export const Interests: FunctionComponent = () => (
     <Panels>
       <LeftPanel>
         <Item icon={FaCogs}>
-          <En>Personal projects</En>
-          <Fr>Projets personnels</Fr>
+          <T en="Personal projects" fr="Projets personnels" />
         </Item>
         <Item icon={Windsurf}>
-          <En>Windsurf</En>
-          <Fr>Planche à voile</Fr>
+          <T en="Windsurf" fr="Planche à voile" />
         </Item>
       </LeftPanel>
       <RightPanel>
         <Item icon={FaChess}>
-          <En>Chess</En>
-          <Fr>Jeu d&apos;échecs</Fr>
+          <T en="Chess" fr="Jeu d'échecs" />
         </Item>
         <Item icon={FaBook}>
-          <En>Reading</En>
-          <Fr>Lecture</Fr>
+          <T en="Reading" fr="Lecture" />
         </Item>
       </RightPanel>
     </Panels>

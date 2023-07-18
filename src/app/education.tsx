@@ -41,12 +41,13 @@ export const Education: FunctionComponent = () => (
 
     <Degree end={dayjs('2008')}>
       <DegreeTitle>
-        <En>Science A-levels</En>
-        <Fr>Baccalauréat S</Fr>
+        <T en="Science A-levels" fr="Baccalauréat S" />
       </DegreeTitle>
       <DegreeDescription>
-        <En>With an emphasis on mathematics and engineering sciences</En>
-        <Fr>Mention assez bien, option sciences de l&apos;ingénieur, spécialité mathématiques</Fr>
+        <T
+          en="With an emphasis on mathematics and engineering sciences"
+          fr="Mention assez bien, option sciences de l'ingénieur, spécialité mathématiques"
+        />
       </DegreeDescription>
     </Degree>
   </Section>

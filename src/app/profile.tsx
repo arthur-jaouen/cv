@@ -9,48 +9,56 @@ export const Profile: FunctionComponent = () => (
       <p>28 years old - Driving licence - French</p>
       <p>
         <b>
-          Having recently moved to Dublin, I am now looking for a company that can provide a great
-          team and Agile experience in a modern development workflow. I love code reviews, unit
-          testing, automated builds and team happiness :)
+          I am looking for a company that can provide a great team and Agile experience in a modern
+          development workflow. I love code reviews, unit testing, automated builds and team
+          happiness.
         </b>
       </p>
       <p>
-        After a two-year degree in software engineering, I have acquired a solid 6 years work
-        experience centered around the web, mastering diverse frontend and backend technologies. I
-        view myself as a generalist, being able to develop Android applications or React web
-        frontends as well as PHP, Ruby or .Net backends. Passionate about open-source software, I
-        like to try leading-edge technologies such as Rust or Elm and apply the lessons learned to
-        my everyday code.
+        After a two-year degree in software engineering, I have acquired a solid work experience
+        centered around the web, mastering diverse frontend and backend technologies. I like being a
+        generalist, able to develop React web frontends or Android applications as well as .Net
+        backends.
       </p>
-      <p>This CV is powered by React, Typescript, SCSS and built by Webpack.</p>
       <p>
+        Passionate about open-source software, I like to try leading-edge technologies such as Rust
+        and apply the lessons learned to my everyday code.
+      </p>
+      <p>This CV is powered by React, Typescript and built by Webpack.</p>
+      <p className="noprint">
         <a href="https://github.com/arthur-jaouen/cv" target="_blank" rel="noreferrer">
           View source on Github
         </a>
       </p>
+      <p className="noscreen">View source on Github: https://github.com/arthur-jaouen/cv</p>
     </En>
     <Fr>
       <p>28 ans - Permis B</p>
       <p>
         <b>
-          Having recently moved to Dublin, I am now looking for a company that can provide a great
-          team and Agile experience in a modern development workflow. I love code reviews, unit
-          testing, automated builds and team happiness :)
+          Je recherche une entreprise qui peut fournir une équipe motivée utilisant les
+          méthodologies Agile et un workflow de développement moderne. J&apos;aime les code reviews,
+          les tests unitaires, les builds automatisés et l&apos;esprit d&apos;équipe.
         </b>
       </p>
       <p>
-        After a two-year degree in software engineering, I have acquired a solid 6 years work
-        experience centered around the web, mastering diverse frontend and backend technologies. I
-        view myself as a generalist, being able to develop Android applications or React web
-        frontends as well as PHP, Ruby or .Net backends. Passionate about open-source software, I
-        like to try leading-edge technologies such as Rust or Elm and apply the lessons learned to
-        my everyday code.
+        Après un DUT informatique, j&apos;ai acquis une solide expérience professionnelle centrée
+        sur le web, maîtrisant des technologies diverses sur le frontend ou le backend. Je me
+        considère comme un généraliste, capable de développer des frontends React ou des
+        applications Android mais aussi des backends en .Net.
       </p>
-      <p>This CV is powered by React, Typescript, SCSS and built by Webpack.</p>
       <p>
+        Passioné par l&apos;open source, j&apos;aime tester des technologies modernes comme Rust et
+        appliquer les leçons apprises au code que je produis.
+      </p>
+      <p>Ce CV a été créé avec React et Typescript et construit par Webpack.</p>
+      <p className="noprint">
         <a href="https://github.com/arthur-jaouen/cv" target="_blank" rel="noreferrer">
-          View source on Github
+          Voir le code source sur Github
         </a>
+      </p>
+      <p className="noscreen">
+        Voir le code source sur Github : https://github.com/arthur-jaouen/cv
       </p>
     </Fr>
   </Section>

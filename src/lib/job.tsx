@@ -1,18 +1,22 @@
 import dayjs from 'dayjs';
 import { FunctionComponent, PropsWithChildren, ReactNode } from 'react';
-import { FaCircle } from 'react-icons/fa';
-import { Company, CompanyProps } from './company';
-import { Duration } from './i18n/duration';
-import { Icon } from './icons/icon';
+import { useLanguage } from './i18n/context';
 import { Subsection } from './subsection';
 
-import { useLanguage } from './i18n/context';
 import './job.scss';
+
+const capFirst = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+
+export type CompanyProps = {
+  name: string;
+  url: string;
+  logo: string;
+};
 
 export type JobProps = PropsWithChildren<{
   start: string;
   end: string;
-  company?: CompanyProps;
+  company: CompanyProps;
   title: ReactNode;
   languages: string[];
   databases: string[];
@@ -34,39 +38,28 @@ export const Job: FunctionComponent<JobProps> = ({
   const startDate = dayjs(start, undefined, language);
   const endDate = dayjs(end, undefined, language);
 
+  const tools = [
+    languages.join(' \u2022 '),
+    databases.join(' \u2022 '),
+    frameworks.join(' \u2022 '),
+  ].join(' \u2502 ');
+
   return (
-    <div className="job">
-      <div className="job-company">{company ? <Company {...company} /> : null}</div>
-      <Subsection
-        title={
-          <>
-            {startDate.format('MMM YYYY')} - {endDate.format('MMM YYYY')} (
-            <Duration start={startDate} end={endDate} />)
-          </>
-        }
-      >
-        <h4 className="job-title">{title}</h4>
-        <p className="job-tools">
-          {languages.map((l) => (
-            <span key={l} className="job-tool">
-              {l}
-            </span>
-          ))}
-          <Icon icon={FaCircle} color="#009a49" />
-          {frameworks.map((f) => (
-            <span key={f} className="job-tool">
-              {f}
-            </span>
-          ))}
-          <Icon icon={FaCircle} color="#009a49" />
-          {databases.map((d) => (
-            <span key={d} className="job-tool">
-              {d}
-            </span>
-          ))}
-        </p>
-        {children}
-      </Subsection>
-    </div>
+    <Subsection
+      className="job"
+      title={`${capFirst(startDate.format('MMM YYYY'))} - ${capFirst(endDate.format('MMM YYYY'))}`}
+    >
+      <a className="job-logo" href={company.url} target="_blank" rel="noreferrer">
+        <img src={company.logo} alt={company.name} />
+      </a>
+      <h5 className="job-company">
+        <a href={company.url} target="_blank" rel="noreferrer">
+          {company.name}
+        </a>
+      </h5>
+      <h4 className="job-title">{title}</h4>
+      <p className="job-tools">{tools}</p>
+      {children}
+    </Subsection>
   );
 };

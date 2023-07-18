@@ -124,7 +124,7 @@
       grid-template-areas:
         'portrait profile contact'
         'portrait profile interests';
-      grid-template-columns: 20% 1fr 30%;
+      grid-template-columns: 21% 1fr 30%;
       grid-column-gap: 1rem;
 
       .pdf-download {
@@ -133,8 +133,25 @@
       }
     }
 
-    aside .sticky {
-      padding-left: 0;
+    aside {
+      .sticky {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+    }
+
+    @supports (position: sticky) {
+      aside {
+        display: flex;
+        align-items: flex-end;
+
+        .sticky {
+          min-height: 100vh;
+          bottom: 0;
+          position: sticky;
+        }
+      }
     }
   }
 }
@@ -169,23 +186,13 @@
   }
 }
 
-@page {
-  size: A4;
-  margin: 2rem;
-}
-
 @media print {
   .layout-container {
     grid-template-areas:
       'header main'
-      'aside aside';
-    grid-template-columns: 32.5% 1fr;
+      'aside main';
+    grid-template-columns: 35% 1fr;
     grid-template-rows: 100vh;
-
-    .language-picker,
-    .pdf-download {
-      display: none;
-    }
 
     header .sticky {
       grid-template-areas:
@@ -193,20 +200,6 @@
         'contact'
         'profile'
         'interests';
-    }
-
-    aside .sticky {
-      flex-direction: row;
-
-      .education {
-        width: 41%;
-        box-sizing: border-box;
-      }
-
-      .skills {
-        flex-grow: 1;
-        padding-left: 1rem;
-      }
     }
   }
 }
