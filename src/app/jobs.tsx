@@ -25,7 +25,10 @@ export const Jobs: FunctionComponent = () => (
         logo: require('../img/ies.jpg'),
       }}
       title={
-        <T en="Software Engineer (React, Ruby, C++)" fr="Ingénieur logiciel (React, Ruby, C++)" />
+        <T
+          en="Senior Software Engineer (React, Ruby, C++)"
+          fr="Ingénieur logiciel senior (React, Ruby, C++)"
+        />
       }
       languages={['JS', 'Ruby', 'C++', 'C#', 'HTML/CSS']}
       databases={['PostgreSQL']}
@@ -43,8 +46,8 @@ export const Jobs: FunctionComponent = () => (
       }}
       title={
         <T
-          en="Full Stack Developer (React, Android, .Net)"
-          fr="Développeur fullstack (React, Android, .Net)"
+          en="Senior Software Engineer (React, Android, .Net)"
+          fr="Ingénieur logiciel senior (React, Android, .Net)"
         />
       }
       languages={['Java', 'JS', 'C#', 'HTML/CSS']}
@@ -59,7 +62,7 @@ export const Jobs: FunctionComponent = () => (
       company={{
         name: 'Silamir',
         url: 'http://silamir.com/en',
-        logo: require('../img/silamir.png'),
+        logo: require('../img/silamir.jpg'),
       }}
       title={
         <T
