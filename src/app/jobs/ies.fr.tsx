@@ -3,8 +3,8 @@ export const IesFr = () => (
     <p>
       IES fournit des services de consulting et des logiciels pour évaluer l&apos;impact
       environnemental des bâtiments à l&apos;échelle d&apos;un bâtiment ou d&apos;une ville. En tant
-      que membre de l&apos;équipe iCD, nous avons amélioré le plugin pour Sketchup afin de
-      l&apos;amener vers des standards de production. J&apos;ai modernisé les outils et techniques
+      que membre de l&apos;équipe iCD, nous avons amélioré le plugin Sketchup de prototypage de
+      digital twins pour permettre sa mise production. J&apos;ai modernisé les outils et techniques
       utilisés dans le développemnt de l&apos;UI, apporté des améliorations de performances et
       développé de nouvelles fonctionnalités :
     </p>
@@ -15,9 +15,9 @@ export const IesFr = () => (
           <li>
             Mise en place de la toolchain pour le développement UI avec React, Typescript, Webpack
           </li>
-          <li>Migration de dialogs existants vers React</li>
+          <li>Migration d&apos;interfaces existantes vers React</li>
           <li>
-            Développement de nouveaux dialogs React:
+            Développement de nouvelles interfaces React:
             <ul>
               <li>Synchronisation avec le backend et résolutions des conflits</li>
               <li>Outil de reporting</li>
@@ -29,7 +29,7 @@ export const IesFr = () => (
             <ul>
               <li>Améliorations de performances</li>
               <li>Génération de géométrie</li>
-              <li>Import de données à partir de sources 3D</li>
+              <li>Import de données à partir de sources 2D et 3D</li>
             </ul>
           </li>
         </ul>
