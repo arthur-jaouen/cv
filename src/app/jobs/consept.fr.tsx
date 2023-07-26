@@ -4,7 +4,7 @@ export const ConseptFr = () => (
     <ul>
       <li>Authentification utilisateur</li>
       <li>Endpoints vers une base de données SQL Server existante</li>
-      <li>Tests unitaires et fonctinonels</li>
+      <li>Tests unitaires et fonctionnels</li>
     </ul>
     <p>Implémentation d&apos;un portail client pour une société d&apos;experts comptables :</p>
     <ul>
