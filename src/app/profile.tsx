@@ -6,7 +6,7 @@ import { Section } from '../lib/section';
 export const Profile: FunctionComponent = () => (
   <Section className="profile" icon={FaRegUser} title={<T en="Profile" fr="Profil" />}>
     <En>
-      <p>28 years old - Driving licence - French</p>
+      <p>32 years old - Driving licence - French</p>
       <p>
         <b>
           I am looking for a company that can provide a great team and Agile experience in a modern
@@ -33,7 +33,7 @@ export const Profile: FunctionComponent = () => (
       <p className="noscreen">View source on Github: https://github.com/arthur-jaouen/cv</p>
     </En>
     <Fr>
-      <p>28 ans - Permis B</p>
+      <p>32 ans - Permis B</p>
       <p>
         <b>
           Je recherche une entreprise qui peut fournir une équipe motivée utilisant les
