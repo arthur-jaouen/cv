@@ -3,7 +3,7 @@ export const ConseptEn = () => (
     <p>Implementation of a REST API using Ruby on Rails:</p>
     <ul>
       <li>User and client authentication</li>
-      <li>Endpointd to an existing SQL Server database</li>
+      <li>Endpoints to an existing SQL Server database</li>
       <li>Unit and functional testing</li>
     </ul>
     <p>Implementation of a customer portal for an accounting company:</p>
