@@ -29,6 +29,7 @@ const config = (env) => ({
           loader: 'babel-loader',
           options: {
             plugins: env.dev ? ['react-refresh/babel'] : [],
+            cacheDirectory: true,
           },
         },
       },
