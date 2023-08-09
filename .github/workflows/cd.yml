@@ -27,19 +27,17 @@ jobs:
         run: yarn build
 
       - name: Gen French PDF
-        uses: fifsky/html-to-pdf-action@master
+        uses: arthur-jaouen/html2pdf-action@main
         with:
-          htmlFile: './dist/index.html#fr'
-          outputFile: './dist/CV Arthur JAOUEN.pdf'
-          launchOptions: '{"executablePath": "/opt/google/chrome/chrome"}'
+          inputPath: './dist/index.html#fr'
+          outputPath: './dist/CV Arthur JAOUEN.pdf'
           pdfOptions: '{"format": "A4", "printBackground": true, "preferCSSPageSize": true}'
 
       - name: Gen English PDF
-        uses: fifsky/html-to-pdf-action@master
+        uses: arthur-jaouen/html2pdf-action@main
         with:
-          htmlFile: './dist/index.html#en'
-          outputFile: './dist/CV Arthur JAOUEN en.pdf'
-          launchOptions: '{"executablePath": "/opt/google/chrome/chrome"}'
+          inputPath: './dist/index.html#en'
+          outputPath: './dist/CV Arthur JAOUEN en.pdf'
           pdfOptions: '{"format": "A4", "printBackground": true, "preferCSSPageSize": true}'
 
       - name: Upload GitHub Pages Artifact
