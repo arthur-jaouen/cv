@@ -2,9 +2,9 @@ name: Build and Deploy
 
 on:
   push:
-    branches: ['main', 'dev']
+    branches: ['dev']
   pull_request:
-    branches: ['main', 'dev']
+    branches: ['main']
 
 jobs:
   build:
@@ -29,8 +29,16 @@ jobs:
       - name: Gen French PDF
         uses: fifsky/html-to-pdf-action@master
         with:
-          htmlFile: ./dist/index.html
-          outputFile: './dist/CV Arthur Jaouen.pdf'
+          htmlFile: './dist/index.html#fr'
+          outputFile: './dist/CV Arthur JAOUEN.pdf'
+          pdfOptions: '{"format": "A4", "margin": {"top": "10mm", "left": "10mm", "right": "10mm", "bottom": "10mm"}}'
+
+      - name: Gen English PDF
+        uses: fifsky/html-to-pdf-action@master
+        with:
+          htmlFile: './dist/index.html#en'
+          outputFile: './dist/CV Arthur JAOUEN en.pdf'
+          pdfOptions: '{"format": "A4", "margin": {"top": "10mm", "left": "10mm", "right": "10mm", "bottom": "10mm"}}'
 
       - name: Upload GitHub Pages Artifact
         uses: actions/upload-pages-artifact@v2
