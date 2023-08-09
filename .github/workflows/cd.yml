@@ -26,6 +26,12 @@ jobs:
       - name: Build
         run: yarn build
 
+      - name: Gen French PDF
+        uses: fifsky/html-to-pdf-action@master
+        with:
+          htmlFile: ./dist/index.html
+          outputFile: './dist/CV Arthur Jaouen.pdf'
+
       - name: Upload GitHub Pages Artifact
         uses: actions/upload-pages-artifact@v2
         with:
