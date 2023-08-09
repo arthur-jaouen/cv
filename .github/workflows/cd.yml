@@ -2,9 +2,9 @@ name: Build and Deploy
 
 on:
   push:
-    branches: ['dev']
+    branches: ['dev', 'main']
   pull_request:
-    branches: ['main']
+    branches: ['dev', 'main']
 
 jobs:
   build:
@@ -31,14 +31,14 @@ jobs:
         with:
           htmlFile: './dist/index.html#fr'
           outputFile: './dist/CV Arthur JAOUEN.pdf'
-          pdfOptions: '{"format": "A4", "margin": {"top": "10mm", "left": "10mm", "right": "10mm", "bottom": "10mm"}}'
+          pdfOptions: '{"format": "A4", "printBackground": true, "preferCSSPageSize": true}'
 
       - name: Gen English PDF
         uses: fifsky/html-to-pdf-action@master
         with:
           htmlFile: './dist/index.html#en'
           outputFile: './dist/CV Arthur JAOUEN en.pdf'
-          pdfOptions: '{"format": "A4", "margin": {"top": "10mm", "left": "10mm", "right": "10mm", "bottom": "10mm"}}'
+          pdfOptions: '{"format": "A4", "printBackground": true, "preferCSSPageSize": true}'
 
       - name: Upload GitHub Pages Artifact
         uses: actions/upload-pages-artifact@v2
