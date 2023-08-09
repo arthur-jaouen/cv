@@ -192,14 +192,17 @@
       'header main'
       'aside main';
     grid-template-columns: 35% 1fr;
-    grid-template-rows: 100vh;
 
-    header .sticky {
-      grid-template-areas:
-        'portrait'
-        'contact'
-        'profile'
-        'interests';
+    header {
+      height: 99.9vh;
+
+      .sticky {
+        grid-template-areas:
+          'portrait'
+          'contact'
+          'profile'
+          'interests';
+      }
     }
   }
 }
