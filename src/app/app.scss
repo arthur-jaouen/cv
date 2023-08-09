@@ -24,6 +24,10 @@ ul {
 }
 
 @media print {
+  * {
+    text-rendering: geometricprecision !important;
+  }
+
   html {
     font-size: 14px;
   }
