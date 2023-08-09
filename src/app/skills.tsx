@@ -19,11 +19,19 @@ export const Skills: FunctionComponent = () => (
       <Skill rate={5}>Linux</Skill>
       <Skill rate={4}>Azure DevOps</Skill>
     </SkillList>
-    <SkillList title={<T en="Language" fr="Langues" />}>
-      <Skill rate={5}>French</Skill>
-      <Skill rate={5}>English</Skill>
-      <Skill rate={2}>Spanish</Skill>
-      <Skill rate={1}>Italian</Skill>
+    <SkillList title={<T en="Languages" fr="Langues" />}>
+      <Skill rate={5}>
+        <T en="French" fr="Français" />
+      </Skill>
+      <Skill rate={5}>
+        <T en="English" fr="Anglais" />
+      </Skill>
+      <Skill rate={2}>
+        <T en="Spanish" fr="Espagnol" />
+      </Skill>
+      <Skill rate={1}>
+        <T en="Italian" fr="Italien" />
+      </Skill>
     </SkillList>
   </Section>
 );
