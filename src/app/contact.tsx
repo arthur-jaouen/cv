@@ -35,14 +35,26 @@ export const Contact: FunctionComponent = () => (
       </LeftPanel>
       <RightPanel>
         <Item key="linkedin" icon={FaLinkedin}>
-          <a href="https://www.linkedin.com/in/arthur-jaouen/" target="_blank" rel="noreferrer">
+          <a
+            className="noprint"
+            href="https://linkedin.com/in/arthur-jaouen/"
+            target="_blank"
+            rel="noreferrer"
+          >
             Linkedin
           </a>
+          <span className="noscreen">https://linkedin.com/in/arthur-jaouen/</span>
         </Item>
         <Item key="github" icon={FaGithub}>
-          <a href="https://github.com/arthur-jaouen" target="_blank" rel="noreferrer">
+          <a
+            className="noprint"
+            href="https://github.com/arthur-jaouen"
+            target="_blank"
+            rel="noreferrer"
+          >
             Github
           </a>
+          <span className="noscreen">https://github.com/arthur-jaouen</span>
         </Item>
       </RightPanel>
     </Panels>
