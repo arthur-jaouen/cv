@@ -31,6 +31,7 @@ jobs:
         with:
           htmlFile: './dist/index.html#fr'
           outputFile: './dist/CV Arthur JAOUEN.pdf'
+          launchOptions: '{"executablePath": "/opt/google/chrome/chrome"}'
           pdfOptions: '{"format": "A4", "printBackground": true, "preferCSSPageSize": true}'
 
       - name: Gen English PDF
@@ -38,6 +39,7 @@ jobs:
         with:
           htmlFile: './dist/index.html#en'
           outputFile: './dist/CV Arthur JAOUEN en.pdf'
+          launchOptions: '{"executablePath": "/opt/google/chrome/chrome"}'
           pdfOptions: '{"format": "A4", "printBackground": true, "preferCSSPageSize": true}'
 
       - name: Upload GitHub Pages Artifact
